@@ -1,0 +1,7 @@
+addr_none# = MsgAddressExt;
+transfer$00 query_id:uint64 amount:(VarUInteger 16) destination:MsgAddress custom_payload:(Maybe ^Cell) response_destination:MsgAddress = InternalMsgBody;
+depth_balance$_ split_depth:(#<= 30) balance:CurrencyCollection = DepthBalanceInfo;
+
+transfer_notification#7362d09c query_id:uint64 amount:(VarUInteger 16)
+           sender:MsgAddress forward_payload:(Either Cell ^Cell)
+           = InternalMsgBody;

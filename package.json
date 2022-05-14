@@ -1,0 +1,17 @@
+{
+  "name": "ton-tl-b",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ton-foundation/ton-tl-b.git",
+  "author": "Steve Korshakov <steve@korshakov.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.33",
+    "@types/pegjs": "^0.10.3",
+    "pegjs": "^0.10.0",
+    "typescript": "^4.6.4"
+  }
+}
