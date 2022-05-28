@@ -1,7 +1,32 @@
-addr_none# = MsgAddressExt;
-transfer$00 query_id:uint64 amount:(VarUInteger 16) destination:MsgAddress custom_payload:(Maybe ^Cell) response_destination:MsgAddress = InternalMsgBody;
-depth_balance$_ split_depth:(#<= 30) balance:CurrencyCollection = DepthBalanceInfo;
+// addr_none# = MsgAddressExt;
+// transfer$00 query_id:uint64 amount:Coins destination:MsgAddress custom_payload:(Maybe ^Cell) response_destination:MsgAddress = InternalMsgBody;
+// depth_balance$_ split_depth:(#<= 30) balance:CurrencyCollection = DepthBalanceInfo;
 
-transfer_notification#7362d09c query_id:uint64 amount:(VarUInteger 16)
-           sender:MsgAddress forward_payload:(Either Cell ^Cell)
-           = InternalMsgBody;
+token_transfer#f8a7ea5 
+    query_id@hide:uint64
+    amount:Coins
+    destination:MsgAddress
+    response_destination:MsgAddress 
+    custom_payload@hide:(Maybe ^Cell)
+    forward_ton_amount:Coins
+    forward_payload@hide:Custom
+    = InternalMsgBody;
+
+token_transfer_notification#7362d09c 
+    query_id@hide:uint64
+    amount:Coins
+    sender:MsgAddress 
+    forward_payload@hide:Custom
+    = InternalMsgBody;
+
+
+whales_stake_withdraw#da803efd
+    query_id@hide:uint64
+    gas_limit@hide:Coins
+    amount:Coins
+    = InternalMsgBody;
+
+whales_stake_deposit#7bcd1fef
+    query_id@hide:uint64
+    gas_limit@hide:Coins
+    = InternalMsgBody;

@@ -1,7 +1,7 @@
 {
     const makeNode = (type, body = {}) => ({
         type,
-        // ...location(),
+        ...location(),
         ...body,
     });
 
@@ -25,9 +25,10 @@ Declaration = __ id:LcIdent selector:Selector __ args: Arg* __ "=" __ type: UcId
 // Arguments
 //
 
-ArgNameEmpty = "_" { return makeNode('NameEmpty'); }
-ArgNameId = LcIdent { return makeNode('NameId', { value: text() }) }
-ArgName = ArgNameEmpty / ArgNameId
+Attribute = "@" id: LcIdent { return id }
+ArgNameId = LcIdent { return makeNode('NameId', { value: text(), attribute: null }) }
+ArgNameIdAttributed = id: LcIdent attr: Attribute { return makeNode('NameId', { value: id, attribute: attr }) }
+ArgName = ArgNameIdAttributed / ArgNameId
 
 // 
 // Types

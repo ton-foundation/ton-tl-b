@@ -6,12 +6,16 @@
   "author": "Steve Korshakov <steve@korshakov.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bn.js": "^5.1.0",
     "ts-node": "^10.7.0"
   },
   "dependencies": {
     "@types/node": "^17.0.33",
     "@types/pegjs": "^0.10.3",
+    "bn.js": "^5.2.1",
+    "case-shift": "^2.5.3",
     "pegjs": "^0.10.0",
+    "ton": "^11.13.0",
     "typescript": "^4.6.4"
   }
 }
